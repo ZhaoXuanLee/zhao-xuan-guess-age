@@ -1,0 +1,24 @@
+<script>
+    let user_name="";
+    let age="";
+
+     async function getAge() {
+        fetch('https://api.agify.io/?name=' + user_name)
+        .then((response) => response.json())
+        .then((data) => {
+  	user_name = data.name; // Path for temperature
+  	age = data.age; // Path for description
+	});
+}
+</script>
+
+<h1>Guess Age</h1>
+
+<form on:submit|preventDefault={getAge}>
+    <label for="name">Name:</label>
+    <label for="age">age:</label>
+    <input id="user_name" bind:value={user_name} type="text" />
+    <button type="submit">Check</button>
+</form>
+
+<p>{age}</p>
