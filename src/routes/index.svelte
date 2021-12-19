@@ -20,5 +20,5 @@
     <button type="submit">Check</button>
 </form>
 
-<label for="age">Age:</label><p>{age}</p>
+<p>Age: {age}</p>
 
